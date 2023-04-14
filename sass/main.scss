@@ -1,3 +1,5 @@
+@import url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+
 //Base
 *,
 *::after,
@@ -14,7 +16,11 @@ html {
 }
 
 //Fonts
-
+body {
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
 
 //Colors
 
@@ -23,4 +29,25 @@ html {
 
 .container {
     width: 1110px;
+    margin: 0 auto;
+}
+
+//Components
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:6rem 0rem 5rem;
+
+ .navigation__item-container {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 43.1rem;
+  height: 2.6rem;
+ } 
+
+ .navigation__item {
+
+ }
 }
