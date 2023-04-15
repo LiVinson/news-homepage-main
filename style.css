@@ -1,4 +1,4 @@
-@import url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
 *,
 *::after,
 *::before {
@@ -16,6 +16,13 @@ body {
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 5.6rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .container {
@@ -35,6 +42,42 @@ body {
   align-items: center;
   width: 43.1rem;
   height: 2.6rem;
+}
+
+.featured-story {
+  width: 73rem;
+}
+.featured-story .featured-story__image {
+  display: block;
+  width: 100%;
+}
+.featured-story .featured-story__content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+.featured-story .featured-story__title,
+.featured-story .featured-story__wrapper {
+  width: 35rem;
+}
+.featured-story .featured-story__title {
+  color: hsl(240, 100%, 5%);
+}
+.featured-story .featured-story__summary {
+  line-height: 1.8;
+  color: hsl(236, 13%, 42%);
+}
+.featured-story .featured-story__cta {
+  display: inline-block;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  margin-top: 2.5rem;
+  padding: 1.4rem 3.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
