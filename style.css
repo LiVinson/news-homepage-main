@@ -40,6 +40,10 @@ h2 {
   justify-content: space-between;
 }
 
+.mb-xl {
+  margin-bottom: 7rem;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -108,6 +112,23 @@ h2 {
 .new-stories .new-stories__story:not(:last-child) {
   border-bottom: hsl(236, 13%, 42%) solid 1px;
   padding-bottom: 3rem;
+}
+
+.recent-story {
+  display: flex;
+  width: 35rem;
+}
+.recent-story picture {
+  margin-right: 2.4rem;
+}
+.recent-story .recent-story__number {
+  color: hsl(233, 8%, 79%);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.recent-story .recent-story__summary {
+  color: hsl(236, 13%, 42%);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -59,6 +59,10 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   display:flex;
   justify-content: space-between; 
 }
+
+.mb-xl {
+  margin-bottom: 7rem;
+}
 //----------------COMPONENTS----------------
 
 // ------ Navigation ------
@@ -156,5 +160,27 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   }
 
 
+
+}
+
+// ------ Recent Stories ------
+.recent-story {
+  display:flex;
+  width: 35rem;
+
+  picture {
+    margin-right:2.4rem;
+  }
+
+  .recent-story__number {
+    color: $secondary-color-1;
+    font-size:3.2rem;
+    font-weight:700;
+    line-height:1;
+  }
+
+  .recent-story__summary {
+    color: $secondary-color-2;
+  }
 
 }
