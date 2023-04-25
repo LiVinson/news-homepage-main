@@ -1,7 +1,7 @@
 // @import url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
 
-$primary-font: 'Inter', sans-serif;
+$primary-font: "Inter", sans-serif;
 
 //Base
 *,
@@ -13,9 +13,9 @@ $primary-font: 'Inter', sans-serif;
 }
 
 html {
-    //1 rem = 10px
-    font-size: 62.5%; 
-    box-sizing: border-box;
+  //1 rem = 10px
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 //Fonts
@@ -37,6 +37,10 @@ h2 {
   line-height: 1;
 }
 
+a {
+  text-decoration: none;
+}
+
 //Colors
 $primary-color-1: hsl(35, 77%, 62%); //soft orange
 $primary-color-2: hsl(5, 85%, 63%); //soft red
@@ -46,23 +50,39 @@ $secondary-color-1: hsl(233, 8%, 79%); //grayish blue
 $secondary-color-2: hsl(236, 13%, 42%); //dark grayish blue
 $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
-
 //Layout
-
-.container {
-    width: 1110px;
-    margin: 0 auto;
-}
 
 
 .flex-space-between {
-  display:flex;
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
 }
+
+@media screen and (max-width: 37.5rem) {
+  .flex-wrap-mobile {
+    flex-wrap: wrap;
+  }
+}
+
+
 
 .mb-xl {
   margin-bottom: 7rem;
 }
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+  padding-bottom: 9rem;
+}
+
+@media screen and (max-width: 37.5rem) {
+  .container {
+    max-width:100%;
+    padding: 0 1.6rem 9rem 1.6rem;
+  }
+}
+
 //----------------COMPONENTS----------------
 
 // ------ Navigation ------
@@ -70,16 +90,24 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:6rem 0rem 5rem;
+  padding: 8.9rem 0rem 5.7rem;
+  max-width: 100%;
 
- .navigation__item-container {
-  display:flex;
-  justify-content:space-between;
-  align-items: center;
-  width: 43.1rem;
-  height: 2.6rem;
- } 
+  .navigation__item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 43.1rem;
+    height: 2.6rem;
+  }
+  .navigation__item {
+    color: $secondary-color-2;
+    text-decoration: none;
+  }
 
+  .navigation__item:hover {
+    color: $primary-color-2;
+  }
 }
 
 // ------ Featured Story ------
@@ -93,16 +121,14 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   }
 
   .featured-story__content {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
     padding-top: 1rem;
   }
   .featured-story__title,
-  .featured-story__wrapper
-   {
+  .featured-story__wrapper {
     width: 35rem;
-    // float:left;
   }
 
   .featured-story__title {
@@ -110,77 +136,79 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   }
 
   .featured-story__summary {
-
-    color: $secondary-color-2
+    color: $secondary-color-2;
   }
+
   .featured-story__cta {
-    display:inline-block;
+    display: inline-block;
     background-color: $primary-color-2;
     color: $neutral;
     margin-top: 2.5rem;
-    padding: 1.4rem 3.1rem;
+    padding: 1.4rem 3rem;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
 
+    &:hover {
+      background-color: $secondary-color-3;
+    }
   }
-  
-
 }
 
+@media screen and (max-width: 37.5rem) {
+  .featured-story {
+    width:100%
+}
+}
 // ------ New Stories ------
 .new-stories {
   width: 35rem;
   padding: 2.8rem 2.4rem;
   background-color: $secondary-color-3;
- 
 
   .new-stories__section-title {
     color: $primary-color-1;
-    // margin-bottom:2.5rem;
-    
   }
 
   .new-stories__story-header {
-    margin-bottom:.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
     color: $neutral;
-
+    &:hover {
+      color: $primary-color-1;
+    }
   }
 
   .new-stories__story {
     color: $secondary-color-1;
-    padding-top:3rem;
+    padding-top: 3rem;
   }
 
   .new-stories__story:not(:last-child) {
-    border-bottom: $secondary-color-2 solid 1px; 
+    border-bottom: $secondary-color-2 solid 1px;
     padding-bottom: 3rem;
-   
   }
-
-
-
 }
 
 // ------ Recent Stories ------
 .recent-story {
-  display:flex;
+  display: flex;
   width: 35rem;
 
   picture {
-    margin-right:2.4rem;
+    margin-right: 2.4rem;
   }
 
   .recent-story__number {
     color: $secondary-color-1;
-    font-size:3.2rem;
-    font-weight:700;
-    line-height:1;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
   }
 
   .recent-story__summary {
     color: $secondary-color-2;
   }
-
 }

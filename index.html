@@ -19,21 +19,21 @@
   <nav class="navigation">
     <img src="./assets/images/logo.svg" alt="W Logo">
     <div class="navigation__item-container">
-      <span class="navigation__item">
+      <a href="#" class="navigation__item">
         Home
-      </span>
-      <span class="navigation__item">
+      </a>
+      <a href="#" class="navigation__item">
         New
-      </span>
-      <span class="navigation__item">
+      </a>
+      <a href="#" class="navigation__item">
         Popular
-      </span>
-      <span class="navigation__item">
+      </a>
+      <a href="#" class="navigation__item">
         Trending
-      </span>
-      <span class="navigation__item">
+      </a>
+      <a href="#" class="navigation__item">
         Categories
-      </span>
+      </a>
     </div>
     
     
@@ -41,14 +41,16 @@
     
   </nav>
   <main>
-    <section class="flex-space-between mb-xl">
+    <section class="flex-space-between flex-wrap-mobile mb-xl">
       <div class="featured-story">
         <picture class="featured-story__image">
           <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width:375px)"  width="730">
+          <source srcset="./assets/images/image-web-3-mobile.jpg"  width="343">
+
           <img src="./assets/images/image-web-3-desktop.jpg" alt="3d abstract of shapes">
         </picture>
 
-        <div class="featured-story__content">
+        <div class="featured-story__content flex-wrap-mobile">
           <h1 class="featured-story__title">The Bright Future of Web 3.0?</h1>
           <div class="featured-story__wrapper"> 
             <p class="featured-story__summary">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
@@ -64,18 +66,18 @@
       <div class="new-stories">
         <h2 class="new-stories__section-title">New</h2>
         <div class="new-stories__story">
-          <h3 class="new-stories__story-header">Hydrogen VS Electric Cars</h3>
+          <a href="#" class="new-stories__story-header">Hydrogen VS Electric Cars</a>
           <p class="new-stories__story-summary">Will hydrogen-fueled cars ever catch up to EVs?
           </p>
         </div>
 
         <div class="new-stories__story">
-          <h3 class="new-stories__story-header">The Downsides of AI Artistry</h3>
+          <a href="#" class="new-stories__story-header">The Downsides of AI Artistry</a>
           <p class="new-stories__story-summary">What are the possible adverse effects of on-demand AI image generation?</p>
         </div>
 
         <div class="new-stories__story">
-          <h3 class="new-stories__story-header">Is VC Funding Drying Up?</h3>
+          <a href="#" class="new-stories__story-header">Is VC Funding Drying Up?</a>
           <p class="new-stories__story-summary">Private funding by VC firms is down 50% YOY. We take a look at what that means.
 
           </p>
@@ -92,7 +94,7 @@
       </div>
     </section>
    
-    <section class="flex-space-between">
+    <section class="flex-space-between flex-wrap-mobile">
       <div class="recent-story">
         <picture>
           <source srcset="./assets/images/image-retro-pcs.jpg" media="(min-width:375px)"  width="100">
