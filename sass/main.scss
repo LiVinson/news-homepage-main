@@ -23,7 +23,7 @@ body {
   font-size: 1.5rem;
   font-family: $primary-font;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1; //26px
 }
 
 h1 {
@@ -37,6 +37,22 @@ h2 {
   line-height: 1;
 }
 
+p {
+  line-height:2.6rem;
+}
+
+@media screen and (max-width: 37.5rem) {
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  h2 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
 a {
   text-decoration: none;
 }
@@ -70,16 +86,17 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   margin-bottom: 7rem;
 }
 
+
 .container {
-  width: 1110px;
+  width: 1142px;
   margin: 0 auto;
-  padding-bottom: 9rem;
+  padding: 0rem 1.6rem 9rem;
 }
 
 @media screen and (max-width: 37.5rem) {
   .container {
     max-width:100%;
-    padding: 0 1.6rem 9rem 1.6rem;
+    padding: 0 1.6rem 8.1rem 1.6rem;
   }
 }
 
@@ -110,6 +127,13 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   }
 }
 
+// @media screen and (max-width: 37.5rem) {
+//   .navigation {
+//     width:100%
+// }
+// }
+
+
 // ------ Featured Story ------
 
 .featured-story {
@@ -118,13 +142,18 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   .featured-story__image {
     display: block;
     width: 100%;
+
+    img {
+      max-width: 100%;
+    }
   }
+
 
   .featured-story__content {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-    padding-top: 1rem;
+    // padding-top: 1rem;
   }
   .featured-story__title,
   .featured-story__wrapper {
@@ -133,6 +162,7 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
   .featured-story__title {
     color: $secondary-color-3;
+
   }
 
   .featured-story__summary {
@@ -158,8 +188,20 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
 @media screen and (max-width: 37.5rem) {
   .featured-story {
-    width:100%
-}
+    width:100%;
+    margin-bottom: 6.4rem;
+
+    .featured-story__image {
+      margin-bottom:2.2rem;
+    }
+
+    .featured-story__title {
+      margin-bottom:2rem;
+      
+    }
+  }
+
+
 }
 // ------ New Stories ------
 .new-stories {
@@ -176,6 +218,7 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
     font-weight: 700;
     margin-bottom: 0.8rem;
     color: $neutral;
+    line-height:2.4rem;
     &:hover {
       color: $primary-color-1;
     }
