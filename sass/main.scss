@@ -111,6 +111,7 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   }
 }
 
+
 //----------------COMPONENTS----------------
 
 // ------ Navigation ------
@@ -142,54 +143,59 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
   &__mobile-icon {
     display:none;
-    // position:absolute;
-    z-index:1000;
-    // top:5rem;
-    // right:5rem;
+    position:absolute;
+    z-index:200;
+    right:1.6rem;
     width:4rem;
     font-size:.7rem;
 
-    &::before,
-    &::after {
-      content:"";
-      width:100%;
-      height:.3rem;
-      display:inline-block;
-      background-color:$secondary-color-3;
+    // &::before,
+    // &::after {
+    //   content:"";
+    //   width:100%;
+    //   height:.3rem;
+    //   display:inline-block;
+    //   background-color:$secondary-color-3;
 
-    }
+    // }
 
-     span {
-      display: inline-block;
-      width: 100%;
-      height:.3rem;
-      background-color:$secondary-color-3;
+    //  span {
+    //   display: inline-block;
+    //   width: 100%;
+    //   height:.3rem;
+    //   background-color:$secondary-color-3;
 
  
-    } 
+    // } 
   }
 
   &__mobile-container {
-    display:none;
-    width:0;
-    // width: 25.6rem;
+    // display:none;
+    z-index:150;
+    width:0rem;
     height:100vh;
     background-color: $neutral;
     top:0;
     right:0;
+    transition: width .2s ease-in;
     
     
   }
 
-  &__mobile-icon[data-status='open'] ~ &__mobile-container {
+
+
+  body[data-status='open'] &__mobile-container {
     width: 25.6rem;
+    display:block;
   }
+
+
 
   &__mobile-items {
     display:flex;
     flex-direction: column;
     width: 20rem;
-    margin: 0 auto;
+    margin: 14.4rem 2.8rem;
     margin-top: 14.4rem;
     font-size:1.8rem;
     line-height:2.4rem;
@@ -204,6 +210,19 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   
 }
 
+.mobile-overlay {
+  display:none;
+  position: absolute;
+  width:100vw;
+  height:100vh;
+  z-index: 100;
+  background-color:$secondary-color-3;
+  opacity:50%;
+}
+
+body[data-status='open'] .mobile-overlay {
+  display:block;
+} 
 @media screen and (max-width: 37.5rem) {
   .navigation {
     padding: 2.8rem 1.6rem 3.2rem;

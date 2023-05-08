@@ -106,45 +106,50 @@ a {
 }
 .navigation__mobile-icon {
   display: none;
-  z-index: 1000;
+  position: absolute;
+  z-index: 200;
+  right: 1.6rem;
   width: 4rem;
   font-size: 0.7rem;
 }
-.navigation__mobile-icon::before, .navigation__mobile-icon::after {
-  content: "";
-  width: 100%;
-  height: 0.3rem;
-  display: inline-block;
-  background-color: hsl(240, 100%, 5%);
-}
-.navigation__mobile-icon span {
-  display: inline-block;
-  width: 100%;
-  height: 0.3rem;
-  background-color: hsl(240, 100%, 5%);
-}
 .navigation__mobile-container {
-  display: none;
-  width: 0;
+  z-index: 150;
+  width: 0rem;
   height: 100vh;
   background-color: hsl(36, 100%, 99%);
   top: 0;
   right: 0;
+  transition: width 0.2s ease-in;
 }
-.navigation__mobile-icon[data-status=open] ~ .navigation__mobile-container {
+body[data-status=open] .navigation__mobile-container {
   width: 25.6rem;
+  display: block;
 }
 .navigation__mobile-items {
   display: flex;
   flex-direction: column;
   width: 20rem;
-  margin: 0 auto;
+  margin: 14.4rem 2.8rem;
   margin-top: 14.4rem;
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
 .navigation .navigation__mobile-items .navigation__item {
   margin-bottom: 2.4rem;
+}
+
+.mobile-overlay {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: hsl(240, 100%, 5%);
+  opacity: 50%;
+}
+
+body[data-status=open] .mobile-overlay {
+  display: block;
 }
 
 @media screen and (max-width: 37.5rem) {
