@@ -1,4 +1,5 @@
 // @import url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+@use "sass:math";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
 
 $primary-font: "Inter", sans-serif;
@@ -84,11 +85,21 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
 .mb-xl {
   margin-bottom: 7rem;
+
+  
+}
+
+@media screen and (max-width: 37.5rem) {
+  .mb-xl {
+    margin-bottom: 6.4rem;
+
+  }
 }
 
 
 .container {
   width: 1142px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0rem 1.6rem 9rem;
 }
@@ -96,7 +107,7 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 @media screen and (max-width: 37.5rem) {
   .container {
     max-width:100%;
-    padding: 0 1.6rem 8.1rem 1.6rem;
+    padding: 0 1.6rem 4.8rem 1.6rem;
   }
 }
 
@@ -107,37 +118,121 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8.9rem 0rem 5.7rem;
+  padding: 8.9rem 1.6rem 5.7rem;
+  width: 1142px;
   max-width: 100%;
+  margin:0 auto;
 
-  .navigation__item-container {
+
+  &__item-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 43.1rem;
     height: 2.6rem;
   }
-  .navigation__item {
+  &__item {
     color: $secondary-color-2;
     text-decoration: none;
   }
 
-  .navigation__item:hover {
+  &__item:hover {
     color: $primary-color-2;
+  }
+
+  &__mobile-icon {
+    display:none;
+    // position:absolute;
+    z-index:1000;
+    // top:5rem;
+    // right:5rem;
+    width:4rem;
+    font-size:.7rem;
+
+    &::before,
+    &::after {
+      content:"";
+      width:100%;
+      height:.3rem;
+      display:inline-block;
+      background-color:$secondary-color-3;
+
+    }
+
+     span {
+      display: inline-block;
+      width: 100%;
+      height:.3rem;
+      background-color:$secondary-color-3;
+
+ 
+    } 
+  }
+
+  &__mobile-container {
+    display:none;
+    width:0;
+    // width: 25.6rem;
+    height:100vh;
+    background-color: $neutral;
+    top:0;
+    right:0;
+    
+    
+  }
+
+  &__mobile-icon[data-status='open'] ~ &__mobile-container {
+    width: 25.6rem;
+  }
+
+  &__mobile-items {
+    display:flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 14.4rem;
+    font-size:1.8rem;
+    line-height:2.4rem;
+
+    
+  }
+
+  & &__mobile-items &__item  {
+    margin-bottom: 2.4rem;
+  }
+
+  
+}
+
+@media screen and (max-width: 37.5rem) {
+  .navigation {
+    padding: 2.8rem 1.6rem 3.2rem;
+
+    &__logo {
+      width:4.5rem;
+    }
+    &__item-container {
+      display:none;
+    }
+  
+    &__mobile-icon {
+      display:block
+    }
+    &__mobile-container {
+      position:fixed;
+
+    }
+
   }
 }
 
-// @media screen and (max-width: 37.5rem) {
-//   .navigation {
-//     width:100%
-// }
-// }
-
+//pickle - figure out component widths as percentage of whole 730/1110, 350/1110
 
 // ------ Featured Story ------
 
 .featured-story {
   width: 73rem;
+  // max-width: math.percentage(math.div(73rem, 110rem));
 
   .featured-story__image {
     display: block;
@@ -175,10 +270,12 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
     color: $neutral;
     margin-top: 2.5rem;
     padding: 1.4rem 3rem;
+    font-size: 1.4rem;
     font-weight: 700;
+    line-height:2.4rem;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.438rem;
 
     &:hover {
       background-color: $secondary-color-3;
@@ -206,10 +303,13 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 // ------ New Stories ------
 .new-stories {
   width: 35rem;
+//  max-width: math.percentage(math.div(35rem, 110rem));
+
   padding: 2.8rem 2.4rem;
   background-color: $secondary-color-3;
 
   .new-stories__section-title {
+    margin-bottom:.3rem;
     color: $primary-color-1;
   }
 
@@ -226,15 +326,21 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
   .new-stories__story {
     color: $secondary-color-1;
-    padding-top: 3rem;
+    padding-top: 2.9rem;
   }
 
   .new-stories__story:not(:last-child) {
     border-bottom: $secondary-color-2 solid 1px;
-    padding-bottom: 3rem;
+    padding-bottom: 3.2rem;
   }
 }
 
+@media screen and (max-width: 37.5rem) {
+  .new-stories {
+    padding-left:2.05rem;
+    padding-right:2.05rem;
+  }
+}
 // ------ Recent Stories ------
 .recent-story {
   display: flex;
@@ -254,4 +360,18 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   .recent-story__summary {
     color: $secondary-color-2;
   }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .recent-story {
+    margin-bottom: 3.3rem;
+  }
+
+  .recent-story__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
 }

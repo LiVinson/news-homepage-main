@@ -15,9 +15,9 @@
   </style>
 </head>
 <body>
-<div class="container">
   <nav class="navigation">
-    <img src="./assets/images/logo.svg" alt="W Logo">
+    <img src="./assets/images/logo.svg" alt="W Logo" class="navigation__logo">
+    
     <div class="navigation__item-container">
       <a href="#" class="navigation__item">
         Home
@@ -35,11 +35,37 @@
         Categories
       </a>
     </div>
+
+    <div class="navigation__mobile-icon" data-status="closed">
+      <span></span>
+    </div>
     
     
+    <div class="navigation__mobile-container">
+      <div class="navigation__mobile-items">
+        <a href="#" class="navigation__item">
+          Home
+        </a>
+        <a href="#" class="navigation__item">
+          New
+        </a>
+        <a href="#" class="navigation__item">
+          Popular
+        </a>
+        <a href="#" class="navigation__item">
+          Trending
+        </a>
+        <a href="#" class="navigation__item">
+          Categories
+        </a>
+      </div>
+      
+    </div>
     
     
   </nav>
+<div class="container">
+
   <main>
     <section class="flex-space-between flex-wrap-mobile mb-xl">
       <div class="featured-story">
@@ -160,6 +186,6 @@
 </div>
  
   
-
+<script src="./index.js"></script>
 </body>
 </html>
