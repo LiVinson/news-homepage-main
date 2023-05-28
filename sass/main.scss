@@ -4,7 +4,7 @@
 
 $primary-font: "Inter", sans-serif;
 
-//Colors
+//------------- Colors-------------
 $primary-color-1: hsl(35, 77%, 62%); //soft orange
 $primary-color-2: hsl(5, 85%, 63%); //soft red
 
@@ -13,18 +13,9 @@ $secondary-color-1: hsl(233, 8%, 79%); //grayish blue
 $secondary-color-2: hsl(236, 13%, 42%); //dark grayish blue
 $secondary-color-3: hsl(240, 100%, 5%); //dark space blue
 
-/*
-PICKLE
 
-- Clean up spacing when greater than mobile
-- Clean up HTML naming/comments
-- Clean up SASS (nesting), comments
-- Final Review
-- Add to Github
-- Post to FEM
-*/
+// ------------- Base-------------
 
-//Base
 *,
 *::after,
 *::before {
@@ -39,7 +30,8 @@ html {
   box-sizing: border-box;
 }
 
-//Fonts
+//------------ Fonts ----------------
+
 body {
   font-size: 1.5rem;
   font-family: $primary-font;
@@ -76,6 +68,7 @@ p {
 a {
   text-decoration: none;
 }
+
 @media screen and (max-width: 375px) {
   h1 {
     font-size: 4rem;
@@ -89,16 +82,12 @@ a {
   }
 }
 
+//---------------- Layout -----------------
 
-
-//Layout
 .flex {
-  display:flex;
-}
-.flex-space-between {
   display: flex;
-  justify-content: space-between;
 }
+
 @media screen and (max-width: 650px) {
   .flex-wrap-tablet {
     flex-wrap: wrap;
@@ -120,7 +109,7 @@ a {
   margin-right: 3rem;
 }
 
-@media screen and (max-width: 950px) { 
+@media screen and (max-width: 950px) {
   .mr-med {
     margin-right: 2rem;
   }
@@ -132,25 +121,22 @@ a {
   }
 }
 
-
-
-
-
 .container {
   width: 1142px;
   max-width: 100%;
   margin: 0 auto;
   padding: 0rem 1.6rem 9rem;
+  position:relative;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
   .container {
     max-width: 100%;
     padding: 0 1.6rem 4.8rem 1.6rem;
   }
 }
 
-//----------------COMPONENTS----------------
+//---------------- COMPONENTS ----------------
 
 // ------ Navigation ------
 .navigation {
@@ -177,7 +163,6 @@ a {
   &__item:hover {
     color: $primary-color-2;
   }
-
 }
 
 .navigation__mobile {
@@ -193,19 +178,19 @@ a {
   background-color: $secondary-color-3;
   opacity: 50%;
 }
-
-
+@media screen and (max-width: 650px) {
+  .navigation__item-container {
+    width: 37rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .navigation {
-    display:none;
-
-    // &__item-container {
-    //   display: none;
-    // }
+    display: none;
   }
+
   .navigation__mobile {
     display: block;
-    position:relative;
+    position: relative;
     padding: 2.8rem 1.6rem 3.2rem;
 
     &-icon {
@@ -215,7 +200,7 @@ a {
       right: 1.6rem;
       width: 4rem;
       font-size: 0.7rem;
-      top: calc(50% - 9px)
+      top: calc(50% - 9px);
     }
 
     &-logo {
@@ -223,7 +208,6 @@ a {
     }
 
     &-container {
-      display:none;
       position: fixed;
       z-index: 150;
       width: 0rem;
@@ -231,10 +215,9 @@ a {
       background-color: $neutral;
       top: 0;
       right: 0;
-      transition: width 0.2s ease-in;
+      transition: width .3s ease-in;
     }
 
- 
     &-items {
       display: flex;
       flex-direction: column;
@@ -244,32 +227,29 @@ a {
       font-size: 1.8rem;
       line-height: 2.4rem;
     }
-  
-    &__item {
+
+    &-item {
       margin-bottom: 2.4rem;
       color: $secondary-color-2;
+
+      &:active {
+        color:$primary-color-2
+      }
     }
 
- 
-  body[data-status="open"] &-container {
-    width: 25.6rem;
+    body[data-status="open"] &-container {
+      width: 25.6rem;
+    }
+  }
+  body[data-status="open"] .mobile-overlay {
     display: block;
   }
- 
-
 }
-body[data-status="open"] .mobile-overlay {
-  display: block;
-}
-}
-
-//pickle - figure out component widths as percentage of whole 730/1110, 350/1110
 
 // ------ Featured Story ------
 
 .featured-story {
   max-width: 73rem;
-  // margin-right:3rem;
 
   .featured-story__image {
     display: block;
@@ -282,11 +262,9 @@ body[data-status="open"] .mobile-overlay {
 
   .featured-story__content {
     display: flex;
-    // justify-content: space-between;
     margin-top: 1.5rem;
-
-    // padding-top: 1rem;
   }
+
   .featured-story__title,
   .featured-story__wrapper {
     max-width: 35rem;
@@ -294,7 +272,6 @@ body[data-status="open"] .mobile-overlay {
 
   .featured-story__title {
     color: $secondary-color-3;
-
   }
 
   .featured-story__summary {
@@ -314,29 +291,16 @@ body[data-status="open"] .mobile-overlay {
     text-decoration: none;
     letter-spacing: 0.438rem;
 
-    &:hover {
+    &:hover, &:active {
       background-color: $secondary-color-3;
     }
   }
 }
 
-// @media screen and (max-width: 700px) {
-//   .featured-story {
-//     margin-right:0;
-//   }
-// }
-
-// @media screen and (max-width: 650px) {
-
-// }
 
 @media screen and (max-width: 650px) {
-  // .featured-story__content {
-  //   flex-wrap:wrap;
-  // }
   .featured-story {
-    margin-right:0;
-
+    margin-right: 0;
     margin-bottom: 6.4rem;
 
     .featured-story__image {
@@ -350,32 +314,31 @@ body[data-status="open"] .mobile-overlay {
 }
 
 @media screen and (max-width: 500px) {
-
   .featured-story {
-  .featured-story__content {
-    flex-wrap:wrap;
-  }
+    .featured-story__content {
+      flex-wrap: wrap;
+    }
 
-  .featured-story__title,
-  .featured-story__wrapper {
-    max-width: 100%;
-  }
+    .featured-story__title,
+    .featured-story__wrapper {
+      max-width: 100%;
+    }
   }
 }
 
-// ------ New Stories ------
+// ----------- New Stories -----------
+
 .new-stories {
   max-width: 35rem;
-
   padding: 2.8rem 2.4rem;
   background-color: $secondary-color-3;
 
-  .new-stories__section-title {
+  &__section-title {
     margin-bottom: 0.3rem;
     color: $primary-color-1;
   }
 
-  .new-stories__story-header a {
+  &__story-header a {
     margin-bottom: 0.8rem;
     color: $neutral;
     &:hover {
@@ -383,12 +346,12 @@ body[data-status="open"] .mobile-overlay {
     }
   }
 
-  .new-stories__story {
+  &__story {
     color: $secondary-color-1;
     padding-top: 2.9rem;
   }
 
-  .new-stories__story:not(:last-child) {
+  &__story:not(:last-child) {
     border-bottom: $secondary-color-2 solid 1px;
     padding-bottom: 3.2rem;
   }
@@ -406,18 +369,20 @@ body[data-status="open"] .mobile-overlay {
     padding-right: 2.05rem;
   }
 }
-// ------ Recent Stories ------
+
+// -------- Recent Stories ---------
+
 .recent-story {
   display: flex;
+  flex: 1 1 auto;
   width: 35rem;
-  flex:1 1 auto;
+
 
   img {
-    // height: 100%;
     margin-right: 2.4rem;
   }
 
-  .recent-story__number {
+  &__number {
     color: $secondary-color-1;
     font-size: 3.2rem;
     font-weight: 700;
@@ -425,7 +390,7 @@ body[data-status="open"] .mobile-overlay {
     margin-bottom: 1.2rem;
   }
 
-  .recent-story__header {
+  &__header {
     margin-bottom: 0.9rem;
 
     a {
@@ -436,14 +401,14 @@ body[data-status="open"] .mobile-overlay {
     }
   }
 
-  .recent-story__summary {
+  &__summary {
     color: $secondary-color-2;
   }
 }
 
 @media screen and (max-width: 950px) {
   .recent-story {
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     img {
       margin-right: 2rem;
       margin-bottom: 1rem;
@@ -453,18 +418,47 @@ body[data-status="open"] .mobile-overlay {
 
 @media screen and (max-width: 500px) {
   .recent-story {
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     width: 100%;
+    margin-bottom: 3.2rem;
+    margin-right: 0rem;
+
+    img {
+      margin-right: 2.4rem;
+      margin-bottom: 0rem;
+    }
   }
 }
 @media screen and (max-width: 375px) {
   .recent-story {
     margin-bottom: 3.3rem;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
-  .recent-story__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+}
+
+// --------- Footer ----------
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1.5rem;
+  left:50%;
+  transform: translate(-50%, 0);
+
+  a {
+    color: hsl(228, 45%, 44%);
+
   }
 }
+
+
+
+
