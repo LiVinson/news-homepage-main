@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
@@ -10,15 +12,22 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body data-status="closed">
   <div class="mobile-overlay"></div>
   <nav class="navigation">
     <img src="./assets/images/logo.svg" alt="W Logo" class="navigation__logo">
-    
+
     <div class="navigation__item-container">
       <a href="#" class="navigation__item">
         Home
@@ -37,158 +46,142 @@
       </a>
     </div>
 
+  </nav>
+  <nav class="navigation__mobile">
+    <img src="./assets/images/logo.svg" alt="W Logo" class="navigation__mobile-logo">
+
     <div class="navigation__mobile-icon" data-status="closed">
       <img src="./assets/images/icon-menu.svg">
 
     </div>
-    
-    
+
+
     <div class="navigation__mobile-container">
       <div class="navigation__mobile-items">
-        <a href="#" class="navigation__item">
+        <a href="#" class="navigation__mobile-item">
           Home
         </a>
-        <a href="#" class="navigation__item">
+        <a href="#" class="navigation__mobile-item">
           New
         </a>
-        <a href="#" class="navigation__item">
+        <a href="#" class="navigation__mobile-item">
           Popular
         </a>
-        <a href="#" class="navigation__item">
+        <a href="#" class="navigation__mobile-item">
           Trending
         </a>
-        <a href="#" class="navigation__item">
+        <a href="#" class="navigation__mobile-item">
           Categories
         </a>
       </div>
-      
+
     </div>
-    
-    
-    
+
   </nav>
-<div class="container">
 
-  <main>
-    <section class="flex-space-between flex-wrap-mobile mb-xl">
-      <div class="featured-story">
-        <picture class="featured-story__image">
-          <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width:376px)">
-          <source srcset="./assets/images/image-web-3-mobile.jpg"  width="343">
+  <div class="container">
+    <main>
+      <section class="flex flex-wrap-tablet mb-xl">
+        <div class="featured-story mr-med">
+          <picture class="featured-story__image">
+            <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width:501px)">
+            <source srcset="./assets/images/image-web-3-mobile.jpg" width="500">
 
-          <img src="./assets/images/image-web-3-desktop.jpg" alt="3d abstract of shapes">
-        </picture>
+            <img src="./assets/images/image-web-3-desktop.jpg" alt="3d abstract of shapes">
+          </picture>
 
-        <div class="featured-story__content flex-wrap-mobile">
-          <h1 class="featured-story__title">The Bright Future of Web 3.0?</h1>
-          <div class="featured-story__wrapper"> 
-            <p class="featured-story__summary">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-              But is it really fulfilling its promise?</p>
-            <a href="#" class="featured-story__cta">Read more</a>
-
+          <div class="featured-story__content">
+            <h1 class="featured-story__title mr-med">The Bright Future of Web 3.0?</h1>
+            <div class="featured-story__wrapper">
+              <p class="featured-story__summary">We dive into the next evolution of the web that claims to put the power
+                of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?</p>
+              <a href="#" class="featured-story__cta">Read more</a>
+            </div>
           </div>
-        
         </div>
- 
+
+        <div class="new-stories">
+          <h2 class="new-stories__section-title">New</h2>
+          <div class="new-stories__story">
+            <h3 class="new-stories__story-header"><a href="#">Hydrogen VS Electric Cars</a></h3>
+            <p class="new-stories__story-summary">Will hydrogen-fueled cars ever catch up to EVs?
+            </p>
+          </div>
+
+          <div class="new-stories__story">
+            <h3 class="new-stories__story-header"><a href="#">The Downsides of AI Artistry</a></h3>
+            <p class="new-stories__story-summary">What are the possible adverse effects of on-demand AI image
+              generation?</p>
+          </div>
+
+          <div class="new-stories__story">
+            <h3 class="new-stories__story-header"><a href="#">Is VC Funding Drying Up?</a></h3>
+            <p class="new-stories__story-summary">Private funding by VC firms is down 50% YOY. We take a look at what
+              that means.
+
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-wrap-mobile">
+        <div class="recent-story flex flex-wrap-tablet mr-med">
+          <picture>
+            <source srcset="./assets/images/image-retro-pcs.jpg" width="100">
+            <img src="./assets/images/image-retro-pcs.jpg" alt="tbd">
+
+          </picture>
+          <div class="recent-story__content">
+            <p class="recent-story__number">01</p>
+            <h4 class="recent-story__header"><a href="#">Reviving Retro PCs</a></h4>
+            <p class="recent-story__summary">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </div>
+
+        </div>
+        <div class="recent-story flex flex-wrap-tablet mr-med">
+          <picture>
+            <source srcset="./assets/images/image-top-laptops.jpg" width="100">
+            <img src="./assets/images/image-top-laptops.jpg" alt="tbd">
+
+          </picture>
+          <div class="recent-story__content">
+            <p class="recent-story__number">02</p>
+            <h4 class="recent-story__header"><a href="#">Top 10 Laptops of 2022</a></h4>
+            <p class="recent-story__summary">
+              Our best picks for various needs and budgets.
+            </p>
+          </div>
+
+        </div>
+        <div class="recent-story flex flex-wrap-tablet mr-med">
+          <picture>
+            <source srcset="./assets/images/image-gaming-growth.jpg" width="100">
+            <img src="./assets/images/image-gaming-growth.jpg" alt="tbd">
+          </picture>
+          <div class="recent-story__content">
+            <p class="recent-story__number">03</p>
+            <h4 class="recent-story__header"><a href="#">The Growth of Gaming</a></h4>
+            <p class="recent-story__summary">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div style="display:none;">
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.lisavinson.com">Lisa Vinson</a>.
       </div>
-
-      <div class="new-stories">
-        <h2 class="new-stories__section-title">New</h2>
-        <div class="new-stories__story">
-          <a href="#" class="new-stories__story-header">Hydrogen VS Electric Cars</a>
-          <p class="new-stories__story-summary">Will hydrogen-fueled cars ever catch up to EVs?
-          </p>
-        </div>
-
-        <div class="new-stories__story">
-          <a href="#" class="new-stories__story-header">The Downsides of AI Artistry</a>
-          <p class="new-stories__story-summary">What are the possible adverse effects of on-demand AI image generation?</p>
-        </div>
-
-        <div class="new-stories__story">
-          <a href="#" class="new-stories__story-header">Is VC Funding Drying Up?</a>
-          <p class="new-stories__story-summary">Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-          </p>
-        </div>
-
-
-
-
-
-
-
-  
-
-      </div>
-    </section>
-   
-    <section class="flex-space-between flex-wrap-mobile">
-      <div class="recent-story">
-        <picture>
-          <source srcset="./assets/images/image-retro-pcs.jpg" media="(min-width:375px)"  width="100">
-          <img src="./assets/images/image-retro-pcs.jpg" alt="tbd">
-
-        </picture>
-        <div class="recent-story__content">
-        <p class="recent-story__number">01</p>
-        <h3 class="recent-story__header">Reviving Retro PCs</h3>
-        <p class="recent-story__summary">
-          What happens when old PCs are given modern upgrades?
-        </p>
-        </div>
-
-      </div>
-      <div class="recent-story">
-        <picture>
-          <source srcset="./assets/images/image-top-laptops.jpg" media="(min-width:375px)"  width="100">
-          <img src="./assets/images/image-top-laptops.jpg" alt="tbd">
-
-        </picture>
-        <div class="recent-story__content">
-<p class="recent-story__number">02</p>
-        <h3 class="recent-story__header">Top 10 Laptops of 2022</h3>
-        <p class="recent-story__summary">
-          Our best picks for various needs and budgets.
-        </p>
-        </div>
-        
-      </div>
-      <div class="recent-story">
-        <picture>
-          <source srcset="./assets/images/image-gaming-growth.jpg" media="(min-width:375px)"  width="100">
-          <img src="./assets/images/image-gaming-growth.jpg" alt="tbd">
-        </picture>
-        <div class="recent-story__content">
-<p class="recent-story__number">03</p>
-        <h3 class="recent-story__header"> The Growth of Gaming</h3>
-        <p class="recent-story__summary">
-          How the pandemic has sparked fresh opportunities.
-        </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-  
-
-
-
-<div style="display:none;">
-
- 
-
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    </div>
   </div>
-</div>
 
-</div>
- 
-  
-<script src="./index.js"></script>
+
+  <script src="./index.js"></script>
 </body>
+
 </html>

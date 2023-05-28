@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+/*
+PICKLE
+
+- Clean up spacing when greater than mobile
+- Clean up HTML naming/comments
+- Clean up SASS (nesting), comments
+- Final Review
+- Add to Github
+- Post to FEM
+*/
 *,
 *::after,
 *::before {
@@ -30,11 +40,26 @@ h2 {
   line-height: 1;
 }
 
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.33;
+}
+
 p {
   line-height: 2.6rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 375px) {
   h1 {
     font-size: 4rem;
     font-weight: 800;
@@ -45,8 +70,8 @@ p {
     line-height: 1;
   }
 }
-a {
-  text-decoration: none;
+.flex {
+  display: flex;
 }
 
 .flex-space-between {
@@ -54,7 +79,12 @@ a {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 650px) {
+  .flex-wrap-tablet {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 500px) {
   .flex-wrap-mobile {
     flex-wrap: wrap;
   }
@@ -63,7 +93,16 @@ a {
   margin-bottom: 7rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+.mr-med {
+  margin-right: 3rem;
+}
+
+@media screen and (max-width: 950px) {
+  .mr-med {
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 375px) {
   .mb-xl {
     margin-bottom: 6.4rem;
   }
@@ -75,7 +114,7 @@ a {
   padding: 0rem 1.6rem 9rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 375px) {
   .container {
     max-width: 100%;
     padding: 0 1.6rem 4.8rem 1.6rem;
@@ -104,38 +143,9 @@ a {
 .navigation__item:hover {
   color: hsl(5, 85%, 63%);
 }
-.navigation__mobile-icon {
+
+.navigation__mobile {
   display: none;
-  position: absolute;
-  z-index: 200;
-  right: 1.6rem;
-  width: 4rem;
-  font-size: 0.7rem;
-}
-.navigation__mobile-container {
-  z-index: 150;
-  width: 0rem;
-  height: 100vh;
-  background-color: hsl(36, 100%, 99%);
-  top: 0;
-  right: 0;
-  transition: width 0.2s ease-in;
-}
-body[data-status=open] .navigation__mobile-container {
-  width: 25.6rem;
-  display: block;
-}
-.navigation__mobile-items {
-  display: flex;
-  flex-direction: column;
-  width: 20rem;
-  margin: 14.4rem 2.8rem;
-  margin-top: 14.4rem;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-}
-.navigation .navigation__mobile-items .navigation__item {
-  margin-bottom: 2.4rem;
 }
 
 .mobile-overlay {
@@ -148,29 +158,61 @@ body[data-status=open] .navigation__mobile-container {
   opacity: 50%;
 }
 
-body[data-status=open] .mobile-overlay {
-  display: block;
-}
-
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 500px) {
   .navigation {
-    padding: 2.8rem 1.6rem 3.2rem;
-  }
-  .navigation__logo {
-    width: 4.5rem;
-  }
-  .navigation__item-container {
     display: none;
+  }
+  .navigation__mobile {
+    display: block;
+    position: relative;
+    padding: 2.8rem 1.6rem 3.2rem;
   }
   .navigation__mobile-icon {
     display: block;
+    position: absolute;
+    z-index: 200;
+    right: 1.6rem;
+    width: 4rem;
+    font-size: 0.7rem;
+    top: calc(50% - 9px);
+  }
+  .navigation__mobile-logo {
+    width: 4.5rem;
   }
   .navigation__mobile-container {
+    display: none;
     position: fixed;
+    z-index: 150;
+    width: 0rem;
+    height: 100vh;
+    background-color: hsl(36, 100%, 99%);
+    top: 0;
+    right: 0;
+    transition: width 0.2s ease-in;
+  }
+  .navigation__mobile-items {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: 14.4rem 2.8rem;
+    margin-top: 14.4rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+  .navigation__mobile__item {
+    margin-bottom: 2.4rem;
+    color: hsl(236, 13%, 42%);
+  }
+  body[data-status=open] .navigation__mobile-container {
+    width: 25.6rem;
+    display: block;
+  }
+  body[data-status=open] .mobile-overlay {
+    display: block;
   }
 }
 .featured-story {
-  width: 73rem;
+  max-width: 73rem;
 }
 .featured-story .featured-story__image {
   display: block;
@@ -181,12 +223,11 @@ body[data-status=open] .mobile-overlay {
 }
 .featured-story .featured-story__content {
   display: flex;
-  justify-content: space-between;
   margin-top: 1.5rem;
 }
 .featured-story .featured-story__title,
 .featured-story .featured-story__wrapper {
-  width: 35rem;
+  max-width: 35rem;
 }
 .featured-story .featured-story__title {
   color: hsl(240, 100%, 5%);
@@ -211,9 +252,9 @@ body[data-status=open] .mobile-overlay {
   background-color: hsl(240, 100%, 5%);
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 650px) {
   .featured-story {
-    width: 100%;
+    margin-right: 0;
     margin-bottom: 6.4rem;
   }
   .featured-story .featured-story__image {
@@ -223,8 +264,17 @@ body[data-status=open] .mobile-overlay {
     margin-bottom: 2rem;
   }
 }
+@media screen and (max-width: 500px) {
+  .featured-story .featured-story__content {
+    flex-wrap: wrap;
+  }
+  .featured-story .featured-story__title,
+  .featured-story .featured-story__wrapper {
+    max-width: 100%;
+  }
+}
 .new-stories {
-  width: 35rem;
+  max-width: 35rem;
   padding: 2.8rem 2.4rem;
   background-color: hsl(240, 100%, 5%);
 }
@@ -232,14 +282,11 @@ body[data-status=open] .mobile-overlay {
   margin-bottom: 0.3rem;
   color: hsl(35, 77%, 62%);
 }
-.new-stories .new-stories__story-header {
-  font-size: 2rem;
-  font-weight: 700;
+.new-stories .new-stories__story-header a {
   margin-bottom: 0.8rem;
   color: hsl(36, 100%, 99%);
-  line-height: 2.4rem;
 }
-.new-stories .new-stories__story-header:hover {
+.new-stories .new-stories__story-header a:hover {
   color: hsl(35, 77%, 62%);
 }
 .new-stories .new-stories__story {
@@ -251,7 +298,12 @@ body[data-status=open] .mobile-overlay {
   padding-bottom: 3.2rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 650px) {
+  .new-stories {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
   .new-stories {
     padding-left: 2.05rem;
     padding-right: 2.05rem;
@@ -260,8 +312,9 @@ body[data-status=open] .mobile-overlay {
 .recent-story {
   display: flex;
   width: 35rem;
+  flex: 1 1 auto;
 }
-.recent-story picture {
+.recent-story img {
   margin-right: 2.4rem;
 }
 .recent-story .recent-story__number {
@@ -269,12 +322,37 @@ body[data-status=open] .mobile-overlay {
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 1;
+  margin-bottom: 1.2rem;
+}
+.recent-story .recent-story__header {
+  margin-bottom: 0.9rem;
+}
+.recent-story .recent-story__header a {
+  color: hsl(240, 100%, 5%);
+}
+.recent-story .recent-story__header a:hover {
+  color: hsl(5, 85%, 63%);
 }
 .recent-story .recent-story__summary {
   color: hsl(236, 13%, 42%);
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 950px) {
+  .recent-story {
+    flex-wrap: wrap;
+  }
+  .recent-story img {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .recent-story {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
   .recent-story {
     margin-bottom: 3.3rem;
   }

@@ -4,6 +4,26 @@
 
 $primary-font: "Inter", sans-serif;
 
+//Colors
+$primary-color-1: hsl(35, 77%, 62%); //soft orange
+$primary-color-2: hsl(5, 85%, 63%); //soft red
+
+$neutral: hsl(36, 100%, 99%); //off white
+$secondary-color-1: hsl(233, 8%, 79%); //grayish blue
+$secondary-color-2: hsl(236, 13%, 42%); //dark grayish blue
+$secondary-color-3: hsl(240, 100%, 5%); //dark space blue
+
+/*
+PICKLE
+
+- Clean up spacing when greater than mobile
+- Clean up HTML naming/comments
+- Clean up SASS (nesting), comments
+- Final Review
+- Add to Github
+- Post to FEM
+*/
+
 //Base
 *,
 *::after,
@@ -38,63 +58,82 @@ h2 {
   line-height: 1;
 }
 
-p {
-  line-height:2.6rem;
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.33;
+}
+
+p {
+  line-height: 2.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+@media screen and (max-width: 375px) {
   h1 {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1;
   }
-  
+
   h2 {
     font-size: 4rem;
     line-height: 1;
   }
 }
-a {
-  text-decoration: none;
-}
 
-//Colors
-$primary-color-1: hsl(35, 77%, 62%); //soft orange
-$primary-color-2: hsl(5, 85%, 63%); //soft red
 
-$neutral: hsl(36, 100%, 99%); //off white
-$secondary-color-1: hsl(233, 8%, 79%); //grayish blue
-$secondary-color-2: hsl(236, 13%, 42%); //dark grayish blue
-$secondary-color-3: hsl(240, 100%, 5%); //dark blue
 
 //Layout
-
-
+.flex {
+  display:flex;
+}
 .flex-space-between {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 650px) {
+  .flex-wrap-tablet {
+    flex-wrap: wrap;
+  }
+}
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 500px) {
   .flex-wrap-mobile {
     flex-wrap: wrap;
   }
 }
 
-
-
+//Margins
 .mb-xl {
   margin-bottom: 7rem;
-
-  
 }
 
-@media screen and (max-width: 37.5rem) {
-  .mb-xl {
-    margin-bottom: 6.4rem;
+.mr-med {
+  margin-right: 3rem;
+}
 
+@media screen and (max-width: 950px) { 
+  .mr-med {
+    margin-right: 2rem;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .mb-xl {
+    margin-bottom: 6.4rem;
+  }
+}
+
+
+
 
 
 .container {
@@ -104,13 +143,12 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   padding: 0rem 1.6rem 9rem;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 375px) {
   .container {
-    max-width:100%;
+    max-width: 100%;
     padding: 0 1.6rem 4.8rem 1.6rem;
   }
 }
-
 
 //----------------COMPONENTS----------------
 
@@ -122,8 +160,7 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
   padding: 8.9rem 1.6rem 5.7rem;
   width: 1142px;
   max-width: 100%;
-  margin:0 auto;
-
+  margin: 0 auto;
 
   &__item-container {
     display: flex;
@@ -141,108 +178,89 @@ $secondary-color-3: hsl(240, 100%, 5%); //dark blue
     color: $primary-color-2;
   }
 
-  &__mobile-icon {
-    display:none;
-    position:absolute;
-    z-index:200;
-    right:1.6rem;
-    width:4rem;
-    font-size:.7rem;
+}
 
-    // &::before,
-    // &::after {
-    //   content:"";
-    //   width:100%;
-    //   height:.3rem;
-    //   display:inline-block;
-    //   background-color:$secondary-color-3;
-
-    // }
-
-    //  span {
-    //   display: inline-block;
-    //   width: 100%;
-    //   height:.3rem;
-    //   background-color:$secondary-color-3;
-
- 
-    // } 
-  }
-
-  &__mobile-container {
-    // display:none;
-    z-index:150;
-    width:0rem;
-    height:100vh;
-    background-color: $neutral;
-    top:0;
-    right:0;
-    transition: width .2s ease-in;
-    
-    
-  }
-
-
-
-  body[data-status='open'] &__mobile-container {
-    width: 25.6rem;
-    display:block;
-  }
-
-
-
-  &__mobile-items {
-    display:flex;
-    flex-direction: column;
-    width: 20rem;
-    margin: 14.4rem 2.8rem;
-    margin-top: 14.4rem;
-    font-size:1.8rem;
-    line-height:2.4rem;
-
-    
-  }
-
-  & &__mobile-items &__item  {
-    margin-bottom: 2.4rem;
-  }
-
-  
+.navigation__mobile {
+  display: none;
 }
 
 .mobile-overlay {
-  display:none;
+  display: none;
   position: absolute;
-  width:100vw;
-  height:100vh;
+  width: 100vw;
+  height: 100vh;
   z-index: 100;
-  background-color:$secondary-color-3;
-  opacity:50%;
+  background-color: $secondary-color-3;
+  opacity: 50%;
 }
 
-body[data-status='open'] .mobile-overlay {
-  display:block;
-} 
-@media screen and (max-width: 37.5rem) {
+
+@media screen and (max-width: 500px) {
   .navigation {
+    display:none;
+
+    // &__item-container {
+    //   display: none;
+    // }
+  }
+  .navigation__mobile {
+    display: block;
+    position:relative;
     padding: 2.8rem 1.6rem 3.2rem;
 
-    &__logo {
-      width:4.5rem;
+    &-icon {
+      display: block;
+      position: absolute;
+      z-index: 200;
+      right: 1.6rem;
+      width: 4rem;
+      font-size: 0.7rem;
+      top: calc(50% - 9px)
     }
-    &__item-container {
+
+    &-logo {
+      width: 4.5rem;
+    }
+
+    &-container {
       display:none;
+      position: fixed;
+      z-index: 150;
+      width: 0rem;
+      height: 100vh;
+      background-color: $neutral;
+      top: 0;
+      right: 0;
+      transition: width 0.2s ease-in;
+    }
+
+ 
+    &-items {
+      display: flex;
+      flex-direction: column;
+      width: 20rem;
+      margin: 14.4rem 2.8rem;
+      margin-top: 14.4rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
     }
   
-    &__mobile-icon {
-      display:block
-    }
-    &__mobile-container {
-      position:fixed;
-
+    &__item {
+      margin-bottom: 2.4rem;
+      color: $secondary-color-2;
     }
 
+ 
+  body[data-status="open"] &-container {
+    width: 25.6rem;
+    display: block;
   }
+ 
+
+}
+body[data-status="open"] .mobile-overlay {
+  display: block;
+}
 }
 
 //pickle - figure out component widths as percentage of whole 730/1110, 350/1110
@@ -250,8 +268,8 @@ body[data-status='open'] .mobile-overlay {
 // ------ Featured Story ------
 
 .featured-story {
-  width: 73rem;
-  // max-width: math.percentage(math.div(73rem, 110rem));
+  max-width: 73rem;
+  // margin-right:3rem;
 
   .featured-story__image {
     display: block;
@@ -262,16 +280,16 @@ body[data-status='open'] .mobile-overlay {
     }
   }
 
-
   .featured-story__content {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-top: 1.5rem;
+
     // padding-top: 1rem;
   }
   .featured-story__title,
   .featured-story__wrapper {
-    width: 35rem;
+    max-width: 35rem;
   }
 
   .featured-story__title {
@@ -291,7 +309,7 @@ body[data-status='open'] .mobile-overlay {
     padding: 1.4rem 3rem;
     font-size: 1.4rem;
     font-weight: 700;
-    line-height:2.4rem;
+    line-height: 2.4rem;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.438rem;
@@ -302,42 +320,64 @@ body[data-status='open'] .mobile-overlay {
   }
 }
 
-@media screen and (max-width: 37.5rem) {
+// @media screen and (max-width: 700px) {
+//   .featured-story {
+//     margin-right:0;
+//   }
+// }
+
+// @media screen and (max-width: 650px) {
+
+// }
+
+@media screen and (max-width: 650px) {
+  // .featured-story__content {
+  //   flex-wrap:wrap;
+  // }
   .featured-story {
-    width:100%;
+    margin-right:0;
+
     margin-bottom: 6.4rem;
 
     .featured-story__image {
-      margin-bottom:2.2rem;
+      margin-bottom: 2.2rem;
     }
 
     .featured-story__title {
-      margin-bottom:2rem;
-      
+      margin-bottom: 2rem;
     }
   }
-
-
 }
+
+@media screen and (max-width: 500px) {
+
+  .featured-story {
+  .featured-story__content {
+    flex-wrap:wrap;
+  }
+
+  .featured-story__title,
+  .featured-story__wrapper {
+    max-width: 100%;
+  }
+  }
+}
+
 // ------ New Stories ------
 .new-stories {
-  width: 35rem;
-//  max-width: math.percentage(math.div(35rem, 110rem));
+  max-width: 35rem;
 
   padding: 2.8rem 2.4rem;
   background-color: $secondary-color-3;
 
   .new-stories__section-title {
-    margin-bottom:.3rem;
+    margin-bottom: 0.3rem;
     color: $primary-color-1;
   }
 
-  .new-stories__story-header {
-    font-size: 2rem;
-    font-weight: 700;
+  .new-stories__story-header a {
     margin-bottom: 0.8rem;
     color: $neutral;
-    line-height:2.4rem;
     &:hover {
       color: $primary-color-1;
     }
@@ -354,18 +394,26 @@ body[data-status='open'] .mobile-overlay {
   }
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 650px) {
   .new-stories {
-    padding-left:2.05rem;
-    padding-right:2.05rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .new-stories {
+    padding-left: 2.05rem;
+    padding-right: 2.05rem;
   }
 }
 // ------ Recent Stories ------
 .recent-story {
   display: flex;
   width: 35rem;
+  flex:1 1 auto;
 
-  picture {
+  img {
+    // height: 100%;
     margin-right: 2.4rem;
   }
 
@@ -374,6 +422,18 @@ body[data-status='open'] .mobile-overlay {
     font-size: 3.2rem;
     font-weight: 700;
     line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .recent-story__header {
+    margin-bottom: 0.9rem;
+
+    a {
+      color: $secondary-color-3;
+      &:hover {
+        color: $primary-color-2;
+      }
+    }
   }
 
   .recent-story__summary {
@@ -381,7 +441,23 @@ body[data-status='open'] .mobile-overlay {
   }
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 950px) {
+  .recent-story {
+    flex-wrap: wrap; 
+    img {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .recent-story {
+    flex-wrap: nowrap; 
+    width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
   .recent-story {
     margin-bottom: 3.3rem;
   }
@@ -391,6 +467,4 @@ body[data-status='open'] .mobile-overlay {
     flex-direction: column;
     justify-content: space-between;
   }
-
-
 }
